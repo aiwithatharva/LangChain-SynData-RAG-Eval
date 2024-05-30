@@ -51,6 +51,7 @@ class QuestionAnswerOutputParser(PydanticOutputParser):
         # self.prompt_template = prompt_template       
         super(QuestionAnswerOutputParser, self).__init__(pydantic_object=Llama2QuestionAnswer,
                                                          **kwargs)
+        self._lc_kwargs = kwargs
 
     def parse(self, text: str) -> Llama2QuestionAnswer:
         try:
